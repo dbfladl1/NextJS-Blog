@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 
 const fullText = `let yurim = {
@@ -10,14 +10,14 @@ const fullText = `let yurim = {
 
 console.log(yurim); ↵`;
 
-export default function Intro() {
+export const Intro = () => {
   const [displayedText, setDisplayedText] = useState<string[]>([]);
   const indexRef = useRef(0);
 
   const [isDone, setIsDone] = useState(false);
   const [exit, setExit] = useState(false);
 
-  const [shouldShowIntro, setShouldShowIntro] = useState(false); 
+  const [shouldShowIntro, setShouldShowIntro] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -42,13 +42,11 @@ export default function Intro() {
 
       setTimeout(() => setIsDone(true), 4500);
       setTimeout(() => setExit(true), 4850);
-      setTimeout(()=> router.replace("/enter/profile"),4900)
+      setTimeout(() => router.replace("/enter/profile"), 4900);
 
       return () => clearInterval(timer);
     }
   }, []);
-
-
 
   if (!shouldShowIntro) return null;
 
@@ -81,4 +79,4 @@ export default function Intro() {
       )}
     </div>
   );
-}
+};

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 import { Open_Sans } from "next/font/google";
-import Intro from "@/components/intro";
+import {Intro} from "@/components/intro";
 
 const sans = Open_Sans({ subsets: ["latin"] });
 

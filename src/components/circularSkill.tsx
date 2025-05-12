@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import Image, { StaticImageData } from "next/image";
-import Memo from "@/components/memo";
+import {Memo} from "@/components/memo";
 
 type Props = {
   percent: number;
@@ -15,14 +15,14 @@ type Props = {
 };
 const MotionCircle = motion("circle");
 
-export default function CircularSkill({
+export const CircularSkill = ({
   percent,
   size = 135,
   stroke = 6,
   label,
   note,
   imgSrc,
-}: Props) {
+}: Props) => {
   const radius = (size - stroke) / 2;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (percent / 100) * circumference;
@@ -78,7 +78,7 @@ export default function CircularSkill({
           {label} ({percent}%)
         </p>
       </div>
-      {note && isNote && <Memo text={note} /> }
+      {note && isNote && <Memo text={note} />}
     </div>
   );
-}
+};

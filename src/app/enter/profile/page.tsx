@@ -7,7 +7,7 @@ import TSPath from "@/images/Typescript_logo_2020.svg";
 import JSPath from "@/images/JavaScript-logo.png";
 import ReactPath from "@/images/React-icon.svg";
 import NextJSPate from "@/images/Nextjs-logo.svg";
-import CircularSkill from "@/components/circularSkill";
+import {CircularSkill} from "@/components/circularSkill";
 import GitPath from "@/images/git.png";
 import JIRAPath from "@/images/jira_cloud_macos_bigsur_icon_190051.png";
 import NotionPath from "@/images/Notion-logo.svg.png";

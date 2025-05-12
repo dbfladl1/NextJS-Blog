@@ -3,7 +3,7 @@ type MemoProps = {
   text: string;
 };
 
-export default function Memo({ text }: MemoProps) {
+export const Memo = ({ text }: MemoProps) => {
   return (
     <div>
       <div>
@@ -14,4 +14,4 @@ export default function Memo({ text }: MemoProps) {
       </div>
     </div>
   );
-}
+};
