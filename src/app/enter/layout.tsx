@@ -15,12 +15,12 @@ export default function EnterLayout({
           let<span className="text-[#5C4ACD]"> yurim</span>
         </h1>
         <nav>
-          <ul className="flex gap-3 justify-end">
+          {/* <ul className="flex gap-3 justify-end">
             <li>
               <b>KO</b>
             </li>
             <li>EN</li>
-          </ul>
+          </ul> */}
           <ul className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm sm:text-base items-center">
             <li>
               <Link href="/enter/profile">PROFILE</Link>
@@ -28,9 +28,9 @@ export default function EnterLayout({
             <li>
               <Link href="/enter/portfolio">PORTFOLIO</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/enter/posts">POSTS</Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/enter/guestbook">GUESTBOOK</Link>
             </li>
