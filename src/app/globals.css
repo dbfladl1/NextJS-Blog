@@ -24,3 +24,35 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fade-out 0.4s ease-in-out forwards;
+}
+
+@keyframes slide-diagonal-out {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-100%, -100%) rotate(-50deg) scale(0.8);
+  }
+}
+
+.slide-diagonal-out {
+  animation: slide-diagonal-out 0.7s ease-in-out forwards;
+}
