@@ -4,18 +4,21 @@ import { InputMemo } from "@/components/inputMemo";
 import { PlusButton } from "@/components/plusButton";
 import { PostCard } from "@/components/postCard";
 import { getPost } from "@/lib/guestbook";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export type postProps = {
   userid: string;
   nickname: string;
   relation: string;
   text: string;
+  order?: number;
 };
 
 export default function GuestbookPage() {
   const [isInputLayer, setIsInputLayer] = useState(false);
   const [posts, setPosts] = useState<postProps[]>([]);
+
+  const mouseDownInside = useRef(false);
 
   const handleBackgroundClick = () => {
     setIsInputLayer(false);
@@ -52,9 +55,17 @@ export default function GuestbookPage() {
     <div className="p-5">
       <h4 className="text-center text-lg mb-5">저는 이런사람이래요 😊😳</h4>
       <div className="flex flex-wrap gap-4">
-        {posts.map((post) => (
-          <PostCard post={post} refreshHandler={getPosts} key={post.userid} />
-        ))}
+        {posts
+          .sort((a, b) => {
+            if (a.order == null && b.order == null) return 0;
+            if (a.order == null) return 1;
+            if (b.order == null) return -1;
+
+            return a.order - b.order;
+          })
+          .map((post) => (
+            <PostCard post={post} refreshHandler={getPosts} key={post.userid} />
+          ))}
       </div>
       <PlusButton
         bottom="10"
@@ -64,11 +75,20 @@ export default function GuestbookPage() {
       {isInputLayer && (
         <div
           className="fixed inset-0 bg-black/20 z-10"
-          onClick={handleBackgroundClick}
+          onMouseDown={() => (mouseDownInside.current = false)}
+          onMouseUp={() => {
+            if (!mouseDownInside.current) {
+              setIsInputLayer(false);
+            }
+          }}
         >
           <div
             className="absolute bottom-28 right-10"
-            onClick={(e) => e.stopPropagation()}
+            onMouseDown={(e) => {
+              e.stopPropagation();
+              mouseDownInside.current = true;
+            }}
+            onMouseUp={(e) => e.stopPropagation()}
           >
             <InputMemo
               closeHandler={() => setIsInputLayer(false)}
