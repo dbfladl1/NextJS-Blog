@@ -54,7 +54,7 @@ export const InputMemo = ({ closeHandler, refreshHandler }: layerProps) => {
   };
 
   return (
-    <div className="fixed bottom-10 right-10 bg-white p-6 rounded-xl shadow-md w-full max-w-lg mx-auto space-y-4 border border-gray-200">
+    <div className="fixed bottom-10 sm:right-10 right-[3vw] bg-white p-6 rounded-xl shadow-md w-[94vw] sm:w-full max-w-lg mx-auto space-y-4 border border-gray-200">
       <h2 className="text-xl font-bold text-gray-800">메모 남기기</h2>
       <select
         value={relation}

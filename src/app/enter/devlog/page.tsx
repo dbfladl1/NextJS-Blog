@@ -26,7 +26,7 @@ export default function page() {
           <code className="bg-gray-200 px-2 py-1 rounded text-sm">
             let yurim
           </code>
-          이라는 이름은 JavaScript의{" "}
+          이라는 이름은 JavaScript의
           <code className="bg-gray-200 px-2 py-1 rounded text-sm">let</code>{" "}
           선언처럼, 이미 존재하지만 계속해서 변화하고 성장하는 객체로서의 저를
           표현하고 싶었습니다.
