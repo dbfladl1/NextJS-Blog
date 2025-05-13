@@ -19,7 +19,6 @@ export default function Portfoliopage() {
         <div className="p-6 space-y-4">
           <h2 className="text-2xl font-bold text-[#6e37ab]">🐾 PETMILY</h2>
           <p className="text-sm text-gray-600">React Native · GPT · KakaoMap</p>
-
           <p className="text-gray-800 text-sm">
             반려동물 보호자들을 위한 SNS + 커뮤니티 앱입니다. 지도 기반 장소
             탐색, GPT 상담 챗봇, SNS 피드 기능을 제공합니다. 백엔드 개발자 1인과

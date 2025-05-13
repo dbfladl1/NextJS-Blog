@@ -7,7 +7,7 @@ import TSPath from "@/images/Typescript_logo_2020.svg";
 import JSPath from "@/images/JavaScript-logo.png";
 import ReactPath from "@/images/React-icon.svg";
 import NextJSPate from "@/images/Nextjs-logo.svg";
-import {CircularSkill} from "@/components/circularSkill";
+import { CircularSkill } from "@/components/circularSkill";
 import GitPath from "@/images/git.png";
 import JIRAPath from "@/images/jira_cloud_macos_bigsur_icon_190051.png";
 import NotionPath from "@/images/Notion-logo.svg.png";
@@ -87,8 +87,8 @@ export default function ProfilePage() {
 
   return (
     <div>
-      <div className="p-5 flex">
-        <div>
+      <div className="flex flex-col sm:flex-row items-center">
+        <div className="p-5">
           <Image
             src={ProfilePath}
             alt={"프로필이미지"}
@@ -97,7 +97,7 @@ export default function ProfilePage() {
             className="rounded-sm shadow-xl "
           ></Image>
         </div>
-        <div className="pl-5 flex-8 ">
+        <div className="flex-8 text-ellipsis w-full mt-5 p-5 sm:p-0 sm:mt-0">
           <h2 className="text-[#5c4acd] mb-5 text-xl">Let me introduce</h2>
           <h2 className="font-bold">이유림 (Lee Yurim)</h2>
           <br />
@@ -116,7 +116,7 @@ export default function ProfilePage() {
           </div>
           <div className="mt-10">
             <h4>Conntact to me</h4>
-            <ul className="flex gap-5">
+            <ul className="sm:flex sm:flex-row sm:gap-5 mt-2 flex-col gap-5 ">
               <li>
                 <a href="tel:+821012345678">📱 +82 10 4163 0862</a>
               </li>
@@ -124,7 +124,9 @@ export default function ProfilePage() {
                 <a href="mailto:yurim2222@email.com">📧 yurim2222@gmail.com</a>
               </li>
               <li>
-                <a href="https://github.com/dbfladl1">🗂️ https://github.com/dbfladl1</a>
+                <a href="https://github.com/dbfladl1">
+                  🗂️ https://github.com/dbfladl1
+                </a>
               </li>
             </ul>
           </div>
@@ -132,41 +134,42 @@ export default function ProfilePage() {
       </div>
       <div className="p-5">
         <h2 className="text-[#5c4acd] text-xl">Skills for work</h2>
-        <div className="text-[#666] mb-5 ">마우스를 살짝 올려보세요 👀.. </div>
-        <div>
-          <h3>In Productions</h3>
-          <div className="mt-5 mb-15 flex gap-10">
-            {mainSkills.map((skill, index) => (
-              <div className="relative" key={index}>
-                <CircularSkill
-                  percent={skill.progress}
-                  imgSrc={skill.path}
-                  label={skill.name}
-                  note={skill.note}
-                />
-              </div>
-            ))}
-          </div>
-          <h3>Side Projects</h3>
-          <div className="mt-5 mb-15 flex gap-10">
-            {subSkills.map((skill, index) => (
-              <div className="relative" key={index}>
-                <CircularSkill
-                  percent={skill.progress}
-                  imgSrc={skill.path}
-                  label={skill.name}
-                  note={skill.note}
-                />
-              </div>
-            ))}
-          </div>
+        <div className="hidden text-[#666] mb-8 sm:mb-5 sm:block">마우스를 살짝 올려보세요 👀 </div>
+        <div className="text-[#666] mb-8 sm:mb-5 sm:hidden">아이콘을 클릭해보세요 👀 </div>
+        <div className="mt-5 mb-15 grid grid-cols-3 gap-2 sm:mt-5 sm:mb-15 sm:flex sm:gap-10">
+          {mainSkills.map((skill, index) => (
+            <div className="relative mb-10" key={index}>
+              <CircularSkill
+                percent={skill.progress}
+                imgSrc={skill.path}
+                label={skill.name}
+                note={skill.note}
+              />
+            </div>
+          ))}
+        </div>
+
+        <h3 className="text-lg font-semibold mt-10">
+          Applied in Side Projects
+        </h3>
+        <div className="mt-5 mb-15 grid grid-cols-3 gap-2 sm:mt-5 sm:mb-15 sm:flex sm:gap-10 ">
+          {subSkills.map((skill, index) => (
+            <div className="relative" key={index}>
+              <CircularSkill
+                percent={skill.progress}
+                imgSrc={skill.path}
+                label={skill.name}
+                note={skill.note}
+              />
+            </div>
+          ))}
         </div>
       </div>
       <div className="p-5">
         <h2 className="text-[#5c4acd] mb-5 text-xl">For Communication</h2>
-        <div className="flex gap-5 mb-10">
+        <div className="flex sm:gap-5 mb-10">
           {toolings.map((item, index) => (
-            <div className="rounded-full p-5 w-20 h-20 " key={index}>
+            <div className="rounded-full p-3 sm:p-5 w-20 h-20 " key={index}>
               <Image src={item.path} alt={item.name} className="" />
             </div>
           ))}

@@ -31,15 +31,13 @@ export const CircularSkill = ({
 
   return (
     <div
-      className="relative flex flex-col items-center "
-      style={{ width: size, height: size }}
+      className="relative flex flex-col items-center w-[90px] h-[90px] sm:w-[135px] sm:h-[135px]"
       onMouseOver={() => setIsNote(true)}
       onMouseLeave={() => setIsNote(false)}
     >
       <svg
-        width={size}
-        height={size}
-        className="absolute top-0 left-0"
+        viewBox={`0 0 ${size} ${size}`}
+        className="absolute top-0 left-0 w-full h-full"
         style={{ transform: "rotate(-90deg)" }}
       >
         <circle
@@ -65,20 +63,22 @@ export const CircularSkill = ({
           strokeLinecap="round"
         />
       </svg>
-      <div className="overflow-hidden z-10 absolute left-[35px] top-[35px]">
+
+      <div className="overflow-hidden z-10 absolute w-[50%] h-[50%] top-[25%] sm:left-[35px] sm:top-[35px]">
         <Image
           src={imgSrc}
           alt={label}
-          className="object-contain"
-          style={{ width: size - 70, height: size - 70 }}
-        ></Image>
+          className="object-contain w-full h-full"
+        />
       </div>
-      <div className="absolute bottom-[-30px] left-0 w-full flex justify-center">
-        <p className="text-sm font-medium text-gray-700">
+      <div className="absolute top-[100px] sm:top-auto sm:bottom-[-30px] left-0 w-full flex justify-center">
+        <p className="text-sm font-medium text-gray-700 text-center">
           {label} ({percent}%)
         </p>
       </div>
+
       {note && isNote && <Memo text={note} />}
     </div>
   );
 };
+

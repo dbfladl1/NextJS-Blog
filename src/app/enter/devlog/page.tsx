@@ -42,13 +42,14 @@ export default function page() {
         <p className="mb-6">페이지 특성에 따라 렌더링 방식을 구분했습니다.</p>
         <ul className="list-disc list-inside mb-6 space-y-1">
           <li>
-            변경이 잦지 않은 <strong>PROFILE, PORTFOLIO, POST, DEVLOG</strong>{" "}
+            변경이 잦지 않은 <strong>PROFILE, PORTFOLIO, POST, DEVLOG</strong>
             페이지는 <strong>SSG</strong>로 구성
           </li>
           <li>
-            예측할 수 없는 시점에 글이 등록되는 <strong>GUESTBOOK</strong>{" "}
+            예측할 수 없는 시점에 글이 등록되는 <strong>GUESTBOOK</strong>
             페이지는 <strong>CSR</strong>로 처리
           </li>
+          <li>모바일에서도 불편함 없이 볼 수 있도록 반응형으로 제작했습니다.</li>
         </ul>
 
         <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -104,7 +105,6 @@ export default function page() {
         <h2 className="text-2xl font-semibold mb-4">🧩 남은 작업 목표</h2>
 
         <ul className="list-disc list-inside mb-6 space-y-2 text-gray-700">
-          <li>영어 버전 페이지 제작 (EN toggle 기능 포함 예정)</li>
           <li>모바일 대응을 위한 반응형 디자인 전환</li>
         </ul>
       </section>

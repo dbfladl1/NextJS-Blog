@@ -1,3 +1,4 @@
+import { NavMenu } from "@/components/navMenu";
 import { Open_Sans } from "next/font/google";
 import Link from "next/link";
 
@@ -9,28 +10,24 @@ export default function EnterLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`${sans.className} max-w-[1440px] m-auto caret-transparent`}>
-      <header className="p-5 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
-        <h1 className="text-2xl sm:text-3xl">
+    <div
+      className={`${sans.className} max-w-[1440px] mx-auto caret-transparent`}
+    >
+      <header className="p-5 flex items-center justify-between border-b">
+        {/* 모바일 메뉴 (햄버거) */}
+        <NavMenu />
+        <h1 className="text-2xl sm:text-3xl font-bold">
           let<span className="text-[#5C4ACD]"> yurim</span>
         </h1>
-        <nav>
-          {/* <ul className="flex gap-3 justify-end">
-            <li>
-              <b>KO</b>
-            </li>
-            <li>EN</li>
-          </ul> */}
-          <ul className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm sm:text-base items-center">
+        {/* PC용 메뉴 */}
+        <nav className="hidden sm:block">
+          <ul className="flex gap-6 text-sm sm:text-base items-center font-medium">
             <li>
               <Link href="/enter/profile">PROFILE</Link>
             </li>
             <li>
               <Link href="/enter/portfolio">PORTFOLIO</Link>
             </li>
-            {/* <li>
-              <Link href="/enter/posts">POSTS</Link>
-            </li> */}
             <li>
               <Link href="/enter/guestbook">GUESTBOOK</Link>
             </li>
@@ -40,6 +37,7 @@ export default function EnterLayout({
           </ul>
         </nav>
       </header>
+
       <main>{children}</main>
     </div>
   );
