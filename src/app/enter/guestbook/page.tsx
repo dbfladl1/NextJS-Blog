@@ -20,9 +20,6 @@ export default function GuestbookPage() {
 
   const mouseDownInside = useRef(false);
 
-  const handleBackgroundClick = () => {
-    setIsInputLayer(false);
-  };
 
   const getPosts = async () => {
     const res = await getPost();
