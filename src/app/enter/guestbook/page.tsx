@@ -33,13 +33,27 @@ export default function GuestbookPage() {
   useEffect(() => {
     getPosts();
   }, []);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      await getPost(); // 또는 Supabase 요청
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div className="text-center text-3xl py-10">⏳</div>; // 스피너 or 메시지
+  }
 
   return (
     <div className="p-5">
       <h4 className="text-center text-lg mb-5">저는 이런사람이래요 😊😳</h4>
       <div className="flex flex-wrap gap-4">
         {posts.map((post) => (
-          <PostCard post={post} refreshHandler={getPosts} />
+          <PostCard post={post} refreshHandler={getPosts} key={post.userid} />
         ))}
       </div>
       <PlusButton

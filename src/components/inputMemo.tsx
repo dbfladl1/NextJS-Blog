@@ -20,7 +20,7 @@ export const InputMemo = ({ closeHandler, refreshHandler }: layerProps) => {
   };
 
   useEffect(() => {
-    let uid = storage.get(STORAGE_KEYS.GUEST_TOKEN);
+    const uid = storage.get(STORAGE_KEYS.GUEST_TOKEN);
     if (uid) {
       setUserid(uid);
     }

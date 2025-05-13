@@ -2,9 +2,10 @@ import { PostgrestError } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
 
 type returnStateType = {
-  data: any[] | null;
+  data: object[] | null;
   error: PostgrestError | null;
 };
+
 const errorMap: { [key: string]: { status: number; message: string } } = {
   // 외래 키 오류
   "violates foreign key constraint": {
@@ -64,7 +65,7 @@ export function returnState({ data, error }: returnStateType) {
   return NextResponse.json({ message: "200", data });
 }
 
-export function catchState(error: any) {
+export function catchState(error: unknown) {
   if (error instanceof SyntaxError) {
     return new Response(JSON.stringify({ error: "요청 형식이 잘못됨" }), {
       status: 400, // 잘못된 요청 → 클라이언트 책임

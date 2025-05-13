@@ -1,5 +1,6 @@
 "use client";
 
+import { SessionStorage, STORAGE_KEYS } from "@/utils/storage";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 
@@ -10,6 +11,8 @@ const fullText = `let yurim = {
 
 console.log(yurim); ↵`;
 
+const storage = new SessionStorage();
+
 export const Intro = () => {
   const [displayedText, setDisplayedText] = useState<string[]>([]);
   const indexRef = useRef(0);
@@ -19,11 +22,10 @@ export const Intro = () => {
 
   const [shouldShowIntro, setShouldShowIntro] = useState(false);
   const router = useRouter();
-
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const viewed = sessionStorage.getItem("viewedIntro");
+    const viewed = storage.get(STORAGE_KEYS.INTRO_TOKEN);
 
     if (viewed !== "true") {
       setShouldShowIntro(true);
@@ -36,7 +38,7 @@ export const Intro = () => {
           indexRef.current += 1;
         } else {
           clearInterval(timer);
-          sessionStorage.setItem("viewedIntro", "true");
+          storage.set(STORAGE_KEYS.INTRO_TOKEN, "true");
         }
       }, 65);
 
@@ -46,7 +48,7 @@ export const Intro = () => {
 
       return () => clearInterval(timer);
     }
-  }, []);
+  }, [router]);
 
   if (!shouldShowIntro) return null;
 

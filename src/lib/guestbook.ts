@@ -54,7 +54,7 @@ export async function deletePost(userid: string) {
     }),
   });
 
-  const response = await res.json().catch(() => null);
+  await res.json().catch(() => null);
 
   return res.ok ? "success" : "failed";
 }

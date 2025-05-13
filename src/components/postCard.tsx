@@ -15,8 +15,10 @@ export const PostCard = ({ post, refreshHandler }: PostCardProps) => {
   const [auth, setAuth] = useState("");
   useEffect(() => {
     const userKey = storage.get(STORAGE_KEYS.GUEST_TOKEN);
-    userKey && setAuth(userKey);
-  });
+    if (userKey) {
+      setAuth(userKey);
+    }
+  }, []);
 
   function deleteHandler() {
     const check = confirm("삭제하시겠습니까?");

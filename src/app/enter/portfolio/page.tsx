@@ -27,7 +27,7 @@ export default function Portfoliopage() {
           </p>
 
           <ul className="list-disc list-inside text-sm text-gray-700">
-            <li>지도 이동 후 "이 위치에서 검색" 구현</li>
+            <li>지도 이동 후 &ldquo;이 위치에서 검색 &ldquo; 구현</li>
             <li>GPT 기반 동적 질문 챗봇</li>
             <li>SecureStore 통한 자동 로그인 처리</li>
           </ul>

@@ -136,8 +136,8 @@ export default function ProfilePage() {
         <div>
           <h3>In Productions</h3>
           <div className="mt-5 mb-15 flex gap-10">
-            {mainSkills.map((skill) => (
-              <div className="relative">
+            {mainSkills.map((skill, index) => (
+              <div className="relative" key={index}>
                 <CircularSkill
                   percent={skill.progress}
                   imgSrc={skill.path}
@@ -149,8 +149,8 @@ export default function ProfilePage() {
           </div>
           <h3>Side Projects</h3>
           <div className="mt-5 mb-15 flex gap-10">
-            {subSkills.map((skill) => (
-              <div className="relative">
+            {subSkills.map((skill, index) => (
+              <div className="relative" key={index}>
                 <CircularSkill
                   percent={skill.progress}
                   imgSrc={skill.path}
@@ -165,8 +165,8 @@ export default function ProfilePage() {
       <div className="p-5">
         <h2 className="text-[#5c4acd] mb-5 text-xl">For Communication</h2>
         <div className="flex gap-5 mb-10">
-          {toolings.map((item) => (
-            <div className="rounded-full p-5 w-20 h-20 ">
+          {toolings.map((item, index) => (
+            <div className="rounded-full p-5 w-20 h-20 " key={index}>
               <Image src={item.path} alt={item.name} className="" />
             </div>
           ))}

@@ -1,35 +1,50 @@
 export const STORAGE_KEYS = {
-  GUEST_TOKEN: "yurim-guest",
-} as const;
-
-export type StorageKey = keyof typeof STORAGE_KEYS;
-export type StorageValueKey = (typeof STORAGE_KEYS)[StorageKey];
-
-abstract class BaseStorage {
-  protected abstract storage: Storage;
-
-  set(key: StorageValueKey, value: string): void {
-    this.storage.setItem(key, value);
+    GUEST_TOKEN: "yurim-guest",
+    INTRO_TOKEN: "viewed",
+  } as const;
+  
+  export type StorageKey = keyof typeof STORAGE_KEYS;
+  export type StorageValueKey = (typeof STORAGE_KEYS)[StorageKey];
+  
+  abstract class BaseStorage {
+    protected abstract getStorage(): Storage | null;
+  
+    set(key: StorageValueKey, value: string): void {
+      const storage = this.getStorage();
+      if (!storage) return;
+      storage.setItem(key, value);
+    }
+  
+    get(key: StorageValueKey): string | null {
+      const storage = this.getStorage();
+      if (!storage) return null;
+      return storage.getItem(key);
+    }
+  
+    remove(key: StorageValueKey): void {
+      const storage = this.getStorage();
+      if (!storage) return;
+      storage.removeItem(key);
+    }
+  
+    clear(): void {
+      const storage = this.getStorage();
+      if (!storage) return;
+      storage.clear();
+    }
   }
-
-  get(key: StorageValueKey): string | null {
-    const item = this.storage.getItem(key);
-    return item ? item : null;
+  
+  export class LocalStorage extends BaseStorage {
+    protected getStorage(): Storage | null {
+      if (typeof window === "undefined") return null;
+      return window.localStorage;
+    }
   }
-
-  remove(key: StorageValueKey): void {
-    this.storage.removeItem(key);
+  
+  export class SessionStorage extends BaseStorage {
+    protected getStorage(): Storage | null {
+      if (typeof window === "undefined") return null;
+      return window.sessionStorage;
+    }
   }
-
-  clear(): void {
-    this.storage.clear();
-  }
-}
-
-export class LocalStorage extends BaseStorage {
-  protected storage = localStorage;
-}
-
-export class SessionStorage extends BaseStorage {
-  protected storage = sessionStorage;
-}
+  

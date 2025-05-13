@@ -16,7 +16,7 @@ export default function page() {
 
         <p className="mb-6">
           <span className="text-[#5C4ACD]">
-            “나라는 사람을 어떻게 표현할까?”
+            &ldquo;나라는 사람을 어떻게 표현할까?&rdquo;
           </span>
           를 고민하다가, 누군가의 입을 빌려 소개되는 형태로 표현하면 재밌겠다는
           아이디어에서 출발했습니다.
