@@ -61,8 +61,8 @@ export const InputMemo = ({ closeHandler, refreshHandler }: layerProps) => {
         onChange={(e) => setRelation(e.target.value)}
         className="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#333] transition"
       >
-        <option value="친구">친구</option>
-        <option value="직장 동료">직장 동료</option>
+        <option value="friend">친구</option>
+        <option value="coworker">직장 동료</option>
       </select>
       <input
         type="text"
