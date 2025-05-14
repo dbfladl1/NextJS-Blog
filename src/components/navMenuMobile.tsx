@@ -12,7 +12,7 @@ export function NavMenuMobile() {
   const engPath = handleSwitchToEnglish(pathname);
   const korPath = handleSwitchToKor(pathname);
 
-  const lang = pathname.includes("/en") ? "en" : "";
+  const lang = pathname.includes("/en/") ? "en" : "";
   function getLocalizedPath(path: string, lang: "" | "en") {
     return `/enter${lang === "en" ? "/en" : ""}/${path}`;
   }

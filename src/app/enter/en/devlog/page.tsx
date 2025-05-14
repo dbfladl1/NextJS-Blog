@@ -2,7 +2,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <div>
+    <div className="p-5">
       <h1>
       This page isn&apos;t ready in English just yet 😅  Thank you for your patience and for visiting my profile!
       </h1>
