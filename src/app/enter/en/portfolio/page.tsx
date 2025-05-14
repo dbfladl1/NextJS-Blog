@@ -1,14 +1,14 @@
 import React from "react";
-import Image from "next/image";
-import PetmilyPath from "@/images/pm-logo.png";
-import PMScreenShotPath01 from "@/images/pm-screenshot01.jpg";
-import PMScreenShotPath02 from "@/images/pm-screenshot02.jpg";
-import PMScreenShotPath03 from "@/images/pm-screenshot03.jpg";
+
 
 export default function Portfoliopage() {
   return (
     <div className="p-5">
-      <div className="rounded-2xl shadow-lg border border-gray-200 overflow-hidden max-w-md bg-white">
+      <h1>
+        This page isn&apos;t ready in English just yet 😅 Thank you for your patience
+        and for visiting my profile!
+      </h1>
+      {/* <div className="rounded-2xl shadow-lg border border-gray-200 overflow-hidden max-w-md bg-white">
         <div className="w-full h-52 bg-gray-100 flex items-center justify-center">
           <Image
             src={PetmilyPath}
@@ -21,9 +21,9 @@ export default function Portfoliopage() {
           <p className="text-sm text-gray-600">React Native · GPT · KakaoMap</p>
           <p className="text-gray-800 text-sm">
             반려동물 보호자들을 위한 SNS + 커뮤니티 앱입니다. 지도 기반 장소
-            탐색, GPT 상담 챗봇, SNS 피드 기능을 제공합니다. <br /> 백엔드
-            개발자 1인과 함께 2인 팀으로 진행했으며, 기획부터 디자인, 프론트엔드
-            개발까지 전 과정을 담당했습니다.
+            탐색, GPT 상담 챗봇, SNS 피드 기능을 제공합니다. 백엔드 개발자 1인과
+            함께 2인 팀으로 진행했으며, 기획부터 디자인, 프론트엔드 개발까지 전
+            과정을 담당했습니다.
           </p>
 
           <ul className="list-disc list-inside text-sm text-gray-700">
@@ -63,7 +63,7 @@ export default function Portfoliopage() {
             <Image src={PMScreenShotPath03} alt="PETMILY" className="h-52" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

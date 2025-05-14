@@ -33,31 +33,31 @@ export default function ProfilePage() {
       name: "HTML",
       path: HTMLPath,
       progress: 95,
-      note: "시맨틱 구조와 태그의 용도를 명확히 이해하고 있으며, 웹 표준을 고려한 마크업이 가능함",
+      note: "Understands semantic structures and it's purpose, and writes markup that follows web standard",
     },
     {
       name: "CSS",
       path: CSSPath,
       progress: 90,
-      note: "레이아웃 설계와 스타일링을 직접 구상하고 구현할 수 있는 역량을 갖추고 있으며,Tailwind CSS 및 다양한 스타일링 전략에도 유연하게 대응 가능",
+      note: "Skilled in layout and styling, and can flexibily respond to various libraries like Tailwind CSS",
     },
     {
       name: "JavaScript",
       path: JSPath,
       progress: 85,
-      note: "동기/비동기에 대해 이해하고 있으며 외부 API(OpenAPI, ChatGPT, 지도, 차트 등) 활용 경험이 있으며, 프로젝트 상황에 맞는 라이브러리 선택을 할 수 있음음",
-    },
+      note: "Understands synchronous/asynchronous processing, and adapts to open-api APIs such as ChatGPT, maps, and chart libraries."
+      },
     {
       name: "TypeScript",
       path: TSPath,
       progress: 70,
-      note: "type과 interface를 상황에 따라 구분해 사용하며, 제네릭 타입을 활용하여 함수 및 컴포넌트 구현 할 수 있음. 현재 유틸리티 타입과 조건부 타입 학습 및 실습 중",
+      note: "Uses type and interface appropriately, applies generics, and is styding utility and conditional type",
     },
     {
       name: "React",
       path: ReactPath,
       progress: 85,
-      note: "컴포넌트 기반 개발 방식에 익숙하며, CSR 개념과 렌더링 흐름을 이해하고 있음. 상황에 맞게 컴포넌트를 분리하고 재사용 가능한 구조로 설계한 경험 보유",
+      note: "Familiar with component-driven development, with experience in separating components case-by-case and refactoring them into reusable structures. Also understands CSR and the rendering process.",
     },
   ];
 
@@ -66,13 +66,13 @@ export default function ProfilePage() {
       name: "Next.js",
       path: NextJSPate,
       progress: 75,
-      note: "App Router기반의 구조를 정확히 이해하며, SSR/SCR/ISR/SSG/Hydration이 무엇인지와 그 차이점에 대해 명확히 인지함",
+      note: "Understands different rendering strategies in Next.js and when to apply SSR, CSR, ISR, and SSG.",
     },
     {
       name: "React-Native",
       path: ReactPath,
       progress: 70,
-      note: "Naver Map 연동, 이미지 업로드, 외부 API 활용 등 실무 수준의 기능을 직접 구현했으며, apk 빌드부터 release 단계까지의 앱 배포 경험이 있음",
+      note: "Has experience with functions like Naver Maps, image upload, and search API. Also experienced distribution from build APKs to releas",
     },
   ];
 
@@ -99,20 +99,24 @@ export default function ProfilePage() {
         </div>
         <div className="flex-8 text-ellipsis w-full mt-5 p-5 sm:p-0 sm:mt-0">
           <h2 className="text-[#5c4acd] mb-5 text-xl">Let me introduce</h2>
-          <h2 className="font-bold">이유림 (Lee Yurim)</h2>
+          <h2 className="font-bold">Yurim Lee (유림 이)</h2>
           <br />
           <div className="text-ellipsis">
-            안녕하세요. 기능 구현을 넘어, 더 나은 코드와 사용자 경험까지 함께
-            고민하는 프론트엔드 웹/앱 개발자입니다. <br />
+            Hello, I&apos;m a developer who builds web and mobile apps -always aiming
+            to write better code and create better UX
             <br />
-            스타트업에서 약 3년간 웹 서비스의 <b>기획, 개발, 배포, 운영</b>까지
-            전 과정을 경험하며, 사용자 경험과 제품 완성도를 함께 고민해왔습니다.
+            Since I started working as a developr at a start-up, I&apos;ve been
+            thinking about how to improve pruduct qulity and enhance user
+            experiences <br />
+            through <b>planning, development, release and maintanance</b>.{" "}
             <br />
             <br />
-            AI 기술의 발달로 단순한 개발은 물론 팀원들과 서비스의 방향을
-            고민하고 소통할 수 있는 역량이 중요해지고 있다고 생각합니다. <br />
-            핵심 개발 역량을 탄탄히 하는것은 물론, 회사와 함께 목표를
-            실현해나가며 팀에 기여하는 팀원이 되기 위해 노력하고 있습니다.
+            <br />
+            AI technology is evolving rapidly, and that is why I believe strong
+            communication skills and a clear understanding of service direction
+            are more important than ever. <br />
+            As a developer, I&apos;m committed to not only improving my skills but
+            also adding value to your business.
           </div>
           <div className="mt-10">
             <h4>Conntact to me</h4>
@@ -134,8 +138,12 @@ export default function ProfilePage() {
       </div>
       <div className="p-5">
         <h2 className="text-[#5c4acd] text-xl">Skills for work</h2>
-        <div className="hidden text-[#666] mb-8 sm:mb-5 sm:block">마우스를 살짝 올려보세요 👀 </div>
-        <div className="text-[#666] mb-8 sm:mb-5 sm:hidden">아이콘을 클릭해보세요 👀 </div>
+        <div className="hidden text-[#666] mb-8 sm:mb-5 sm:block">
+          Hover over 👀
+        </div>
+        <div className="text-[#666] mb-8 sm:mb-5 sm:hidden">
+          click these icons 👀
+        </div>
         <div className="mt-5 mb-15 grid grid-cols-3 gap-2 sm:mt-5 sm:mb-15 sm:flex sm:gap-10">
           {mainSkills.map((skill, index) => (
             <div className="relative mb-10" key={index}>

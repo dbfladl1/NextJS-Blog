@@ -1,6 +1,7 @@
 export const STORAGE_KEYS = {
     GUEST_TOKEN: "yurim-guest",
     INTRO_TOKEN: "viewed",
+    LANG_TOKEN:"lang"
   } as const;
   
   export type StorageKey = keyof typeof STORAGE_KEYS;
