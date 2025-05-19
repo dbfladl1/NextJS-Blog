@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { postProps } from "@/app/enter/guestbook/page";
+import { postProps } from "@/app/[locale]/enter/guestbook/page";
 import { LocalStorage, STORAGE_KEYS } from "@/utils/storage";
 import { Delete } from "lucide-react";
 import { deletePost } from "@/lib/guestbook";

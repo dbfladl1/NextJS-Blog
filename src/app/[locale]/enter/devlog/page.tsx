@@ -2,12 +2,8 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="p-5">
-      <h1>
-      This page isn&apos;t ready in English just yet 😅  Thank you for your patience and for visiting my profile!
-      </h1>
+    <div className="max-w-[1440px] mx-auto h-[550px]">
       <section className="max-w-3xl mx-auto px-4 py-8 pb-20 text-gray-800">
-        {/* 
         <h1 className="text-3xl font-bold mb-4">프로젝트 소개</h1>
 
         <p className="mb-6">
@@ -108,13 +104,6 @@ export default function page() {
         >
           👉 MY PROFILE Repo
         </a>
-        <hr className="my-8 border-t border-gray-300" />
-
-        <h2 className="text-2xl font-semibold mb-4">🧩 남은 작업 목표</h2>
-
-        <ul className="list-disc list-inside mb-6 space-y-2 text-gray-700">
-          <li>모바일 대응을 위한 반응형 디자인 전환</li>
-        </ul> */}
       </section>
     </div>
   );

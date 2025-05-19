@@ -1,0 +1,44 @@
+{
+  "introduce": {
+    "intro_1": "I'm a developer who builds web and mobile apps, always aiming for better code and better UX.",
+    "intro_highlight_1": " I focus on improving product quality and user experience.",
+    "intro_2": "As AI evolves, clear communication and understanding service direction matter more than ever.",
+    "intro_3": "",
+    "intro_highlight_2": "I'm committed to ",
+    "intro_4": "growing as a developer while delivering real value to your business."
+  },
+  "skills": {
+    "title_web": "Hover over 👀",
+    "title_mb": "click these icons 👀",
+    "computer_lang": [
+      {
+        "name": "HTML",
+        "note": "Understands semantic structures and it's purpose, and writes markup that follows web standard"
+      },
+      {
+        "name": "CSS",
+        "note": "Skilled in layout and styling, and can flexibily respond to various libraries like Tailwind CSS"
+      },
+      {
+        "name": "JavaScript",
+        "note": "Understands synchronous/asynchronous processing, and adapts to open-api APIs such as ChatGPT, maps, and chart libraries."
+      },
+      {
+        "name": "TypeScript",
+        "note": "Uses type and interface appropriately, applies generics, and is styding utility and conditional type"
+      },
+      {
+        "name": "React",
+        "note": "Familiar with component-driven development, with experience in separating components case-by-case and refactoring them into reusable structures. Also understands CSR and the rendering process."
+      },
+      {
+        "name": "React",
+        "note": "Understands different rendering strategies in Next.js and when to apply SSR, CSR, ISR, and SSG."
+    },
+      {
+        "name": "React",
+        "note": "Has experience with functions like Naver Maps, image upload, and search API. Also experienced distribution from build APKs to releas"
+    }
+    ]
+  }
+}

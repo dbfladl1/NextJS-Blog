@@ -1,29 +1,53 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
+import { routing } from "./i18n/routing";
+import createMiddleware from "next-intl/middleware";
+
+// 기본 next-intl 미들웨어 실행 (locale 감지 및 적용)
+const intlMiddleware = createMiddleware(routing);
+
+// 유효한 언어 코드들 (routing.locales와 동일하게 유지해야 함)
+const SUPPORTED_LOCALES = ["en", "ko"];
+
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  const isStaticFile = pathname.startsWith("/_next") ||
-                       pathname.startsWith("/favicon.ico") ||
-                       pathname.startsWith("/robots.txt") ||
-                       pathname.startsWith("/manifest.json") ||
-                       pathname.startsWith("/api");
+  const isStaticFile =
+    pathname.startsWith("/_next") ||
+    pathname.startsWith("/favicon.ico") ||
+    pathname.startsWith("/robots.txt") ||
+    pathname.startsWith("/manifest.json") ||
+    pathname.startsWith("/api");
 
   if (isStaticFile) {
     return NextResponse.next();
   }
 
   if (pathname === "/") {
-    return NextResponse.redirect(new URL("/enter/profile", request.url));
+    const lang = request.headers.get("accept-language")?.startsWith("ko")
+    ? "ko"
+    : "en";
+    return NextResponse.redirect(new URL(`/${lang}/enter/profile`, request.url));
   }
 
-  const validPaths = ["/enter", "/enter/profile", "/enter/guestbook", "/enter/portfolio", "/enter/devlog"];
-  const isValid = validPaths.some((path) => pathname.startsWith(path));
+  const localePrefix = pathname.split("/")[1]; // ex: 'en'
+  const isValidLocale = SUPPORTED_LOCALES.includes(localePrefix);
+  const strippedPath = pathname.replace(`/${localePrefix}`, "");
 
-  if (!isValid) {
-    return NextResponse.redirect(new URL("/enter/profile", request.url));
+  const validPaths = [
+    "/enter",
+    "/enter/profile",
+    "/enter/guestbook",
+    "/enter/portfolio",
+    "/enter/devlog",
+  ];
+
+  const isValidPath = isValidLocale && validPaths.some((path) => strippedPath.startsWith(path));
+  if (!isValidPath) {
+    return NextResponse.redirect(new URL(`/${localePrefix}/enter/profile`, request.url));
   }
 
-  return NextResponse.next();
+
+  // ✅ 5. next-intl의 기본 미들웨어 적용
+  return intlMiddleware(request);
 }

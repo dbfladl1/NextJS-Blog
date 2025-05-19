@@ -4,7 +4,9 @@ import { InputMemo } from "@/components/inputMemo";
 import { PlusButton } from "@/components/plusButton";
 import { PostCard } from "@/components/postCard";
 import { getPost } from "@/lib/guestbook";
-import React, { useEffect, useRef, useState } from "react";
+import { translateText } from "@/lib/translate";
+import { usePathname } from "next/navigation";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 export type postProps = {
   userid: string;
@@ -17,22 +19,37 @@ export type postProps = {
 export default function GuestbookPage() {
   const [isInputLayer, setIsInputLayer] = useState(false);
   const [posts, setPosts] = useState<postProps[]>([]);
+  const pathname = usePathname();
 
   const mouseDownInside = useRef(false);
 
-
-  const getPosts = async () => {
+  const getPosts = useCallback(async () => {
     const res = await getPost();
     if (res === "failed" || res === undefined) {
       alert("데이터 로드 실패");
+      return;
+    }
+
+    if (pathname.includes("/en/")) {
+      const textsToTranslate = res.map((entry: postProps) => entry.text);
+      const engText = await translateText(textsToTranslate, "en");
+
+      const updatePosts = res.map((entry: postProps, index: number) => ({
+        ...entry,
+        text: engText.translated[index],
+        relation: entry.relation === "친구" ? "friend" : "coworker",
+      }));
+
+      setPosts(updatePosts);
     } else {
       setPosts(res);
     }
-  };
+  }, [pathname]);
 
   useEffect(() => {
     getPosts();
-  }, []);
+  }, [getPosts]);
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
@@ -45,11 +62,11 @@ export default function GuestbookPage() {
   }, []);
 
   if (loading) {
-    return <div className="text-center text-3xl py-10">⏳</div>; // 스피너 or 메시지
+    return <div className="text-center text-2xl py-10">⏳</div>; // 스피너 or 메시지
   }
 
   return (
-    <div className="p-5">
+    <div className="p-5 max-w-[1440px] mx-auto">
       <h4 className="text-center text-lg mb-5">저는 이런사람이래요 😊😳</h4>
       <div className="flex flex-wrap gap-4">
         {posts
