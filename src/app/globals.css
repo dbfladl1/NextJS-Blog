@@ -22,7 +22,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'General Sans', 'Pretendard', sans-serif;
 }
 
 @keyframes fade-out {
@@ -55,4 +55,9 @@ body {
 
 .slide-diagonal-out {
   animation: slide-diagonal-out 0.7s ease-in-out forwards;
+}
+
+.mask-radial {
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
 }

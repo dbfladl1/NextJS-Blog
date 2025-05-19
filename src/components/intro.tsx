@@ -40,11 +40,11 @@ export const Intro = () => {
           clearInterval(timer);
           storage.set(STORAGE_KEYS.INTRO_TOKEN, "true");
         }
-      }, 65);
+      }, 45);
 
-      setTimeout(() => setIsDone(true), 4500);
-      setTimeout(() => setExit(true), 4850);
-      setTimeout(() => router.replace("/enter/profile"), 4900);
+      setTimeout(() => setIsDone(true), 3800);
+      setTimeout(() => setExit(true), 3950);
+      setTimeout(() => router.replace("/enter/profile"), 4050);
 
       return () => clearInterval(timer);
     }
