@@ -70,7 +70,7 @@ export default function DevelogPage() {
             <code className="bg-gray-200 px-1 rounded">
               {t("skills.project_detail.detail_feat_1.span_3")}
             </code>
-            로{t("skills.project_detail.detail_feat_1.span_4")}
+            {t("skills.project_detail.detail_feat_1.span_4")}
           </li>
           <li>
             <strong>{t("skills.project_detail.detail_feat_2.span_1")}</strong>
