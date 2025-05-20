@@ -44,7 +44,7 @@ export const Intro = () => {
 
       setTimeout(() => setIsDone(true), 3800);
       setTimeout(() => setExit(true), 3950);
-      setTimeout(() => router.replace("/enter/profile"), 4050);
+      setTimeout(() => router.push("/profile"), 4050);
 
       return () => clearInterval(timer);
     }

@@ -30,7 +30,7 @@ const pretendard = localFont({
 
 export default async function EnterLayout(props: Props): Promise<JSX.Element> {
   const { children, params } = props;
-  const { locale } = params;
+  const { locale } = await Promise.resolve(params);
   const messages = await getMessages({ locale });
 
   if (!messages) {

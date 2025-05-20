@@ -17,7 +17,7 @@ const ProfileLayout = async ({
   const { locale } = await Promise.resolve(params); // ← 이 줄이 핵심: Next.js가 기대하는 Promise params를 받아서 처리
   let messages;
   try {
-    messages = (await import(`@/messages/${locale}.json`)).default;
+    messages = (await import(`@/messages/profile/${locale}.json`)).default;
   } catch (e) {
     console.error(e);
     notFound();
