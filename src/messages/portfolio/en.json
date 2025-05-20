@@ -1,0 +1,12 @@
+{
+  "portfolio": {
+    "petmily": {
+      "intro_1": "A community and social networking app for pet owners. It offers pet-friendly place search based on a map, GPT-powered chatbot consultation, and SNS-style feeds.",
+      "intro_2": "This project was developed by a team of two, including one backend developer. I was responsible for the entire process — planning, design, and frontend development.",
+      "feature_1": "Implemented 'Search in this area' after moving the map",
+      "feature_2": "Dynamic GPT-based chatbot consultation",
+      "feature_3": "Auto-login using SecureStore",
+      "status": "Currently improving code structure for better scalability"
+    }
+  }
+}

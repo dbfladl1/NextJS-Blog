@@ -33,7 +33,6 @@ export function middleware(request: NextRequest) {
 
   const localePrefix = pathname.split("/")[1]; // ex: 'en'
   const isValidLocale = SUPPORTED_LOCALES.includes(localePrefix);
-  const strippedPath = pathname.replace(`/${localePrefix}`, "");
 
   const validPaths = [
     `/${localePrefix}/enter`,
@@ -55,4 +54,5 @@ export function middleware(request: NextRequest) {
       new URL(`/${localePrefix}/enter/profile`, request.url)
     );
   }
+  return intlMiddleware(request);
 }

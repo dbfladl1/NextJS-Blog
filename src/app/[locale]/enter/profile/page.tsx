@@ -57,7 +57,6 @@ export default function ProfilePage() {
       progress: 85,
     },
   ];
-
   const subSkills: langSkill[] = [
     {
       name: "Next.js",
@@ -141,19 +140,19 @@ export default function ProfilePage() {
                 </span>
               </h1>
               <div className=" p-0 sm:w-[720px] sm:text-xl sm:translate-x-[-10px] text-md translate-y-[-90px] sm:translate-y-[-100px] text-white">
-                {t("introduce.intro_1")}
+                {t("profile.introduce.intro_1")}
                 <span className="font-bold italic text-lg sm:text-xl">
-                  {t("introduce.intro_highlight_1")}
+                  {t("profile.introduce.intro_highlight_1")}
                 </span>{" "}
-                {t("introduce.intro_2")}
+                {t("profile.introduce.intro_2")}
                 <br />
                 <br />
                 <div className="sm:block hidden">
-                  {t("introduce.intro_3")}
+                  {t("profile.introduce.intro_3")}
                   <span className="font-bold italic text-xl">
-                    {t("introduce.intro_highlight_2")}
+                    {t("profile.introduce.intro_highlight_2")}
                   </span>
-                  {t("introduce.intro_4")}
+                  {t("profile.introduce.intro_4")}
                 </div>
                 <br />
               </div>
@@ -174,10 +173,10 @@ export default function ProfilePage() {
       <div className="p-5 max-w-[1440px] mx-auto text-center">
         <h2 className="text-[#5c4acd] text-xl">Skills for work</h2>
         <div className="hidden text-[#666] mb-8 sm:mb-5 sm:block">
-          {t("skills.title_web")}
+          {t("profile.skills.title_web")}
         </div>
         <div className="text-[#666] mb-8 sm:mb-5 sm:hidden">
-          {t("skills.title_mb")}
+          {t("profile.skills.title_mb")}
         </div>
         <div className="text-left mt-5 mb-15 grid grid-cols-3 gap-2 sm:mt-5 sm:mb-15 sm:flex sm:gap-10 mx-auto  sm:w-[850px]">
           {mainSkills.map((skill, index) => {
@@ -187,7 +186,7 @@ export default function ProfilePage() {
                   percent={skill.progress}
                   imgSrc={skill.path}
                   label={skill.name}
-                  note={t(`skills.computer_lang.${index}.note`)}
+                  note={t(`profile.skills.computer_lang.${index}.note`)}
                 />
               </div>
             );
@@ -204,7 +203,7 @@ export default function ProfilePage() {
                 percent={skill.progress}
                 imgSrc={skill.path}
                 label={skill.name}
-                note={t(`skills.computer_lang.${index}.note`)}
+                note={t(`profile.skills.computer_lang.${index}.note`)}
               />
             </div>
           ))}

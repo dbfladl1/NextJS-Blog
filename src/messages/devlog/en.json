@@ -1,0 +1,61 @@
+{
+  "devlog": {
+    "introduce": {
+      "title": "Project Overview",
+      "intro_1": "Next.js, TypeScript, Supabase, and Tailwind",
+      "intro_2": "based full-stack side project that also serves as my personal profile page.",
+      "intro_3": "\"How should I introduce myself?\"",
+      "intro_4": "—this question inspired the name",
+      "intro_5": "like the JavaScript declaration, representing myself as an ever-evolving object that already exists.",
+      "intro_6": "And yes, there's a subtle pun hidden in it:",
+      "intro_7": "“let me introduce myself”",
+      "intro_8": "😉"
+    },
+    "skills": {
+      "title": "Tech Stack & Architecture",
+      "architecture": "Rendering methods were selected based on the characteristics of each page.",
+      "architecture_feat_1": {
+        "span_1": "Pages with low update frequency, such as ",
+        "span_2": "PROFILE, PORTFOLIO, POST, and DEVLOG",
+        "span_3": ", were implemented using ",
+        "span_4": "SSG",
+        "span_5": "."
+      },
+      "architecture_feat_2": {
+        "span_1": "For pages like ",
+        "span_2": "GUESTBOOK",
+        "span_3": ", where user input can occur at any time, ",
+        "span_4": "CSR",
+        "span_5": " was used."
+      },
+      "architecture_feat_3": {
+        "span_1": "Fully responsive design for a seamless mobile experience."
+      },
+      "architecture_feat_4": {
+        "span_1": "Implemented i18n ",
+        "span_2": "to support browser-based language detection; Google Translate API is used for the guestbook."
+      },
+      "project_detail": {
+        "title": "Development Considerations",
+        "detail_feat_1": {
+          "span_1": "Modularized reusable logic",
+          "span_2": "e.g., common response handling logic moved to ",
+          "span_3": "utils/apiRes.ts",
+          "span_4": "."
+        },
+        "detail_feat_2": {
+          "span_1": "Explicit type definitions",
+          "span_2": "e.g., structured types based on data purpose."
+        },
+        "detail_feat_3": {
+          "span_1": "Improved localStorage management",
+          "span_2": "e.g., created a Storage class with fixed keys and inheritance for consistent and typo-safe access across components."
+        }
+      },
+      "etc": {
+        "title": "More Details",
+        "sub": "Technical challenges and lessons learned during development are documented in the Notion page below."
+      }
+    }
+  }
+}

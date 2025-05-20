@@ -4,8 +4,10 @@ import PetmilyPath from "@/images/pm-logo.png";
 import PMScreenShotPath01 from "@/images/pm-screenshot01.jpg";
 import PMScreenShotPath02 from "@/images/pm-screenshot02.jpg";
 import PMScreenShotPath03 from "@/images/pm-screenshot03.jpg";
+import { useTranslations } from "next-intl";
 
 export default function Portfoliopage() {
+  const t = useTranslations("portfolio");
   return (
     <div className="p-5 max-w-[1440px] mx-auto h-[550px]">
       <div className="rounded-2xl shadow-lg border border-gray-200 overflow-hidden max-w-md bg-white">
@@ -20,20 +22,16 @@ export default function Portfoliopage() {
           <h2 className="text-2xl font-bold text-[#6e37ab]">🐾 PETMILY</h2>
           <p className="text-sm text-gray-600">React Native · GPT · KakaoMap</p>
           <p className="text-gray-800 text-sm">
-            반려동물 보호자들을 위한 SNS + 커뮤니티 앱입니다. 지도 기반 장소
-            탐색, GPT 상담 챗봇, SNS 피드 기능을 제공합니다. <br /> 백엔드
-            개발자 1인과 함께 2인 팀으로 진행했으며, 기획부터 디자인, 프론트엔드
-            개발까지 전 과정을 담당했습니다.
+            {t("petmily.intro_1")} <br />
+            {t("petmily.intro_2")}
           </p>
 
           <ul className="list-disc list-inside text-sm text-gray-700">
-            <li>지도 이동 후 &ldquo;이 위치에서 검색 &ldquo; 구현</li>
-            <li>GPT 기반 동적 질문 챗봇</li>
-            <li>SecureStore 통한 자동 로그인 처리</li>
+            <li>{t("petmily.feature_1")}</li>
+            <li>{t("petmily.feature_2")}</li>
+            <li>{t("petmily.feature_3")}</li>
           </ul>
-          <div className="text-xs text-gray-500">
-            🎯 현재: 플레이스토어 등록 테스트 중
-          </div>
+          <div className="text-xs text-gray-500">🎯 {t("petmily.status")}</div>
           <div className="flex justify-end gap-3 pt-1">
             <a
               href="https://www.notion.so/PETMILY-146d408c8e29808cb127cb7f7cd51705"
