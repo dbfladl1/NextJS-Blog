@@ -8,7 +8,6 @@ const intlMiddleware = createMiddleware(routing);
 // 유효한 언어 코드들 (routing.locales와 동일하게 유지해야 함)
 const SUPPORTED_LOCALES = ["en", "ko"];
 
-
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
@@ -25,9 +24,11 @@ export function middleware(request: NextRequest) {
 
   if (pathname === "/") {
     const lang = request.headers.get("accept-language")?.startsWith("ko")
-    ? "ko"
-    : "en";
-    return NextResponse.redirect(new URL(`/${lang}/enter/profile`, request.url));
+      ? "ko"
+      : "en";
+    return NextResponse.redirect(
+      new URL(`/${lang}/enter/profile`, request.url)
+    );
   }
 
   const localePrefix = pathname.split("/")[1]; // ex: 'en'
@@ -35,19 +36,23 @@ export function middleware(request: NextRequest) {
   const strippedPath = pathname.replace(`/${localePrefix}`, "");
 
   const validPaths = [
-    "/enter",
-    "/enter/profile",
-    "/enter/guestbook",
-    "/enter/portfolio",
-    "/enter/devlog",
+    `/${localePrefix}/enter`,
+    `/${localePrefix}/enter/profile`,
+    `/${localePrefix}/enter/guestbook`,
+    `/${localePrefix}/enter/portfolio`,
+    `/${localePrefix}/enter/devlog`,
   ];
 
-  const isValidPath = isValidLocale && validPaths.some((path) => strippedPath.startsWith(path));
+  const isValidPath =
+    isValidLocale && validPaths.some((path) => pathname.startsWith(path));
+
   if (!isValidPath) {
-    return NextResponse.redirect(new URL(`/${localePrefix}/enter/profile`, request.url));
+    if (pathname === `/${localePrefix}/enter/profile`) {
+      return NextResponse.next();
+    }
+
+    return NextResponse.redirect(
+      new URL(`/${localePrefix}/enter/profile`, request.url)
+    );
   }
-
-
-  // ✅ 5. next-intl의 기본 미들웨어 적용
-  return intlMiddleware(request);
 }
