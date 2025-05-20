@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import React from "react";
 
-export default function page() {
+export default function DevelogPage() {
   const t = useTranslations("devlog");
   return (
     <div className="max-w-[1440px] mx-auto h-[550px]">
