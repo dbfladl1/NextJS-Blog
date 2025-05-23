@@ -26,18 +26,18 @@ export function NavMenuMobile() {
 
       <nav
         className={`sm:hidden overflow-hidden transition-all duration-300 px-5 ${
-          open ? "max-h-60 py-4" : "max-h-0 py-0"
+          open ? "max-h-60 py-1" : "max-h-0 py-0"
         }`}
       >
         <button
-          className="group inline-flex items-center gap-2 px-3 py-1 rounded-full font-medium text-white bg-gradient-to-r from-[#6e37ab] to-[#82BDE6] shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300"
+          className="group inline-flex items-center gap-2 px-2 mb-3 py-1 rounded-full font-medium text-white bg-gradient-to-r from-[#6e37ab] to-[#82BDE6] shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300"
           onClick={() => handleLangChange(lang === "ko" ? "en" : "ko")}
         >
           <Globe className="w-5 h-5 text-white group-hover:rotate-12 transition-transform duration-300" />
           <span>{lang === "en" ? "KOR" : lang === "ko" && "ENG"}</span>
         </button>
 
-        <ul className="flex flex-col gap-4 text-sm font-medium">
+        <ul className="flex flex-col gap-4 text-sm ml-1 font-medium">
           <li>
             <Link
               href={`/${locale}/enter/profile`}
