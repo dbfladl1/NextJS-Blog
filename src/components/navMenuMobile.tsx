@@ -40,7 +40,7 @@ export function NavMenuMobile() {
         <ul className="flex flex-col gap-4 text-sm ml-1 font-medium">
           <li>
             <Link
-              href={`/${locale}/pages/profile`}
+              href={`/${locale}/main/profile`}
               onClick={() => setOpen(false)}
             >
               PROFILE
@@ -48,7 +48,7 @@ export function NavMenuMobile() {
           </li>
           <li>
             <Link
-              href={`/${locale}/pages/portfolio`}
+              href={`/${locale}/main/portfolio`}
               onClick={() => setOpen(false)}
             >
               PORTFOLIO
@@ -56,7 +56,7 @@ export function NavMenuMobile() {
           </li>
           <li>
             <Link
-              href={`/${locale}/pages/portfolioguestbook`}
+              href={`/${locale}/main/portfolioguestbook`}
               onClick={() => setOpen(false)}
             >
               GUESTBOOK
@@ -64,7 +64,7 @@ export function NavMenuMobile() {
           </li>
           <li>
             <Link
-              href={`/${locale}/pages/devlog`}
+              href={`/${locale}/main/devlog`}
               onClick={() => setOpen(false)}
             >
               DEVLOG
