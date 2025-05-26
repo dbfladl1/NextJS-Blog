@@ -91,7 +91,7 @@ export default function ProfilePage() {
         <div className="max-w-[1440px] mx-auto h-[550px]">
           <div className="sm:flex sm:flex-row sm:translate-x-[50px] sm:translate-y-[145px] translate-y-[-145px]">
             <div className="mt-0 ">
-              <ul className=" sm:flex sm:gap-5 flex-col gap-3 w-[255px] translate-y-[430px] translate-x-[170px] sm:translate-x-[50px] sm:translate-y-[-50px] right-3">
+              <ul className=" sm:flex sm:gap-5 flex-col gap-3 w-[255px] translate-y-[430px] translate-x-[135px] sm:translate-x-[50px] sm:translate-y-[-50px] right-3">
                 <li className="p-3  sm:p-0  backdrop-blur-md bg-white/5 border border-white/20 text-[#eee] shadow-xl rounded-xl sm:translate-x-[60px] sm:mb-0 mb-4 ">
                   <a
                     href="tel:+821012345678"
@@ -132,25 +132,25 @@ export default function ProfilePage() {
                 </li>
               </ul>
             </div>
-            <div className="w-[240px] h-[340px] absolute translate-y-[120px] left-[-15px] z-10 sm:w-[360px] sm:h-[460px] sm:relative sm:translate-x-[50px] sm:translate-y-[-110px]">
+            <div className="w-[240px] h-[340px] translate-y-[120px] translate-x-[-32px] z-10 sm:w-[360px] sm:h-[500px] sm:relative sm:translate-x-[40px] sm:translate-y-[-125px]">
               <Image
                 src={ProfilePath}
                 alt={"프로필이미지"}
                 priority
-                fill
+                quality={80}
                 sizes="(max-width: 640px) 300px, 500px"
-                className="rounded-md object-contain "
+                className="rounded-md object-cover "
               ></Image>
             </div>
-            <div className="flex-8 text-ellipsis w-full mt-5 p-5 sm:p-0 sm:mt-0">
-              <h1 className="text-3xl sm:text-5xl font-bold py-5 text-white sm:translate-x-[-150px] sm:translate-y-[-120px] translate-y-[-80px]">
+            <div className="flex-8 text-ellipsis w-full mt-5 p-5 absolute top-[110px] sm:relative sm:top-8 sm:p-0 sm:mt-0">
+              <h1 className="text-3xl sm:text-5xl font-bold py-2 sm:py-5 text-white sm:translate-x-[-120px] sm:translate-y-[-120px]">
                 Hi! I&apos;m Yurim,
                 <br />
-                <span className="text-2xl sm:text-5xl font-extrabold bg-gradient-to-r from-[#6bf3ff] via-[#7f6eff] to-[#ff88cd] bg-clip-text text-transparent">
+                <span className="text-2xl sm:text-5xl font-extrabold bg-gradient-to-r ml-5 from-[#6bf3ff] via-[#7f6eff] to-[#ff88cd] bg-clip-text text-transparent">
                   — a Creative Developer
                 </span>
               </h1>
-              <div className=" p-0 sm:w-[720px] sm:text-xl sm:translate-x-[-10px] text-md translate-y-[-90px] sm:translate-y-[-100px] text-white">
+              <div className=" p-0 text-white sm:w-[720px] sm:text-xl sm:translate-x-[-10px] text-md sm:translate-y-[-100px]">
                 {t("introduce.intro_1")}
                 <span className="font-bold italic text-lg sm:text-xl">
                   {t("introduce.intro_highlight_1")}
