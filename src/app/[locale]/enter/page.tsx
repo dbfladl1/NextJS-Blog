@@ -5,17 +5,18 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 
-const storage = new SessionStorage();
 export default function EnterPage() {
   const router = useRouter();
 
   useEffect(() => {
+    const storage = new SessionStorage();
     const viewed = storage.get(STORAGE_KEYS.INTRO_TOKEN);
+    const locale = window.location.pathname.split("/")[1];
 
-    if (viewed !== "true") {
-      router.replace(`/intro`);
+    if (viewed === null) {
+      router.replace(`/${locale}/intro`);
     } else {
-      router.replace(`/main/profile`);
+      router.replace(`/${locale}/main/profile`);
     }
   }, [router]);
   return null;
