@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import React, { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import {Memo} from "@/components/memo";
@@ -13,7 +13,10 @@ type Props = {
   note?: string;
   imgSrc: StaticImageData;
 };
-const MotionCircle = motion("circle");
+const MotionCircle = dynamic(() =>
+  import("framer-motion").then((mod) => mod.motion.circle),
+  { ssr: false }
+);
 
 export const CircularSkill = ({
   percent,
