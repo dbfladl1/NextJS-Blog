@@ -13,7 +13,7 @@ console.log(yurim); ↵`;
 
 const storage = new SessionStorage();
 
-export const Intro = ({ locale }: { locale: string }) => {
+export const Intro = () => {
   const [displayedText, setDisplayedText] = useState<string[]>([]);
   const indexRef = useRef(0);
 
@@ -44,11 +44,11 @@ export const Intro = ({ locale }: { locale: string }) => {
 
       setTimeout(() => setIsDone(true), 3700);
       setTimeout(() => setExit(true), 3850);
-      setTimeout(() => router.replace(`/${locale}/main/profile`), 3950);
+      setTimeout(() => router.replace(`/main/profile`), 3950);
 
       return () => clearInterval(timer);
     } else {
-      router.replace(`/${locale}/main/profile`);
+      router.replace(`/main/profile`);
     }
   }, [router]);
 

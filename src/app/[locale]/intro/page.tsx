@@ -5,11 +5,10 @@ export const metadata = {
   description: "intro page.",
 };
 
-export default async function IntroPage(params: { locale: string }) {
-  const { locale } = await Promise.resolve(params);
+export default function IntroPage() {
   return (
     <div className="p-4">
-      <Intro locale={locale} />
+      <Intro />
     </div>
   );
 }
