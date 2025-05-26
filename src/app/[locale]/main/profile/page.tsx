@@ -28,6 +28,12 @@ type tool = {
   path: StaticImageData;
 };
 
+export const metadata = {
+  title: "Yurim's Portfolio | Profile",
+  description:
+    "간단한 자기소개와 연락처, 대표 사이트들을 기재해두었으며, 사용할 수 있는 스킬의 종류와 범위를 기재했습니다.",
+};
+
 export default function ProfilePage() {
   const t = useTranslations("profile");
   const mainSkills: langSkill[] = [
@@ -126,11 +132,16 @@ export default function ProfilePage() {
                 </li>
               </ul>
             </div>
-            <Image
-              src={ProfilePath}
-              alt={"프로필이미지"}
-              className="w-[240px] h-[340px] sm:h-full sm:w-[360px] rounded-md sm:object-cover sm:translate-y-[-155px] translate-y-[95px] absolute sm:relative left-[-15px] sm:left-10 z-10"
-            ></Image>
+            <div className="w-[240px] h-[340px] absolute translate-y-[120px] left-[-15px] z-10 sm:w-[360px] sm:h-[460px] sm:relative sm:translate-x-[50px] sm:translate-y-[-110px]">
+              <Image
+                src={ProfilePath}
+                alt={"프로필이미지"}
+                priority
+                fill
+                sizes="(max-width: 640px) 300px, 500px"
+                className="rounded-md object-contain "
+              ></Image>
+            </div>
             <div className="flex-8 text-ellipsis w-full mt-5 p-5 sm:p-0 sm:mt-0">
               <h1 className="text-3xl sm:text-5xl font-bold py-5 text-white sm:translate-x-[-150px] sm:translate-y-[-120px] translate-y-[-80px]">
                 Hi! I&apos;m Yurim,

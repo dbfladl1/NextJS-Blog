@@ -29,16 +29,16 @@ export default function NavMenuPc() {
       </div>
       <ul className="flex gap-6 text-sm sm:text-base items-center font-medium">
         <li>
-          <Link href={`/${locale}/enter/profile`}>PROFILE</Link>
+          <Link href={`/${locale}/pages/profile`}>PROFILE</Link>
         </li>
         <li>
-          <Link href={`/${locale}/enter/portfolio`}>PORTFOLIO</Link>
+          <Link href={`/${locale}/pages/portfolio`}>PORTFOLIO</Link>
         </li>
         <li>
-          <Link href={`/${locale}/enter/guestbook`}>GUESTBOOK</Link>
+          <Link href={`/${locale}/pages/guestbook`}>GUESTBOOK</Link>
         </li>
         <li>
-          <Link href={`/${locale}/enter/devlog`}>DEVLOG</Link>
+          <Link href={`/${locale}/pages/devlog`}>DEVLOG</Link>
         </li>
       </ul>
     </nav>
