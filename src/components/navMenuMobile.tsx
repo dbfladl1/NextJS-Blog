@@ -56,7 +56,7 @@ export function NavMenuMobile() {
           </li>
           <li>
             <Link
-              href={`/${locale}/main/portfolioguestbook`}
+              href={`/${locale}/main/guestbook`}
               onClick={() => setOpen(false)}
             >
               GUESTBOOK

@@ -6,6 +6,7 @@ const intlMiddleware = createMiddleware(routing);
 const SUPPORTED_LOCALES = ["en", "ko"];
 
 export function middleware(request: NextRequest) {
+  
   const pathname = request.nextUrl.pathname;
 
   const isStaticFile =
@@ -21,18 +22,18 @@ export function middleware(request: NextRequest) {
 
   // 1. 루트 접근시 언어 감지 후 locale로 리디렉션
   if (pathname === "/") {
-    const lang = request.headers.get("accept-language")?.startsWith("ko")
-      ? "ko"
-      : "en";
+    const lang = request.headers.get("accept-language")?.startsWith("en")
+      ? "en"
+      : "ko";
     return NextResponse.redirect(new URL(`/${lang}`, request.url));
   }
 
   const localePrefix = pathname.split("/")[1]; // e.g. 'en', 'ko'
   const isValidLocale = SUPPORTED_LOCALES.includes(localePrefix);
 
-  // 2. locale이 아예 잘못된 경우 → 기본값인 en/enter로 리디렉션
+  // 2. locale이 아예 잘못된 경우 → 기본값인 ko/enter로 리디렉션
   if (!isValidLocale) {
-    return NextResponse.redirect(new URL(`/en/enter`, request.url));
+    return NextResponse.redirect(new URL(`/ko/enter`, request.url));
   }
 
   const validPaths = [

@@ -3,6 +3,7 @@
 import { SessionStorage, STORAGE_KEYS } from "@/utils/storage";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 const fullText = `let yurim = {
   name: "Yurim Lee",
@@ -22,6 +23,11 @@ export const Intro = () => {
 
   const [shouldShowIntro, setShouldShowIntro] = useState(false);
   const router = useRouter();
+
+  
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1];
+
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -44,11 +50,11 @@ export const Intro = () => {
 
       setTimeout(() => setIsDone(true), 3700);
       setTimeout(() => setExit(true), 3850);
-      setTimeout(() => router.replace(`/main/profile`), 3950);
+      setTimeout(() => router.replace(`/${locale}/main/profile`), 3950);
 
       return () => clearInterval(timer);
     } else {
-      router.replace(`/main/profile`);
+      router.replace(`/${locale}/main/profile`);
     }
   }, [router]);
 
